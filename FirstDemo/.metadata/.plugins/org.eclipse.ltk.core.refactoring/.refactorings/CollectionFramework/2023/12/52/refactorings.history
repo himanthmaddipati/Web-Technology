@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.java.collections.List.java&apos; to &apos;ListDemo.java&apos;&#x0A;- Original project: &apos;CollectionFramework&apos;&#x0A;- Original element: &apos;com.java.collections.List.java&apos;&#x0A;- Renamed element: &apos;com.java.collections.ListDemo.java&apos;" description="Rename compilation unit &apos;List.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.java.collections{List.java" name="ListDemo.java" references="false" stamp="1703405570781" version="1.0"/>
+</session>

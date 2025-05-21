@@ -1,0 +1,72 @@
+package com.quizapp;
+
+import java.io.*;
+import java.sql.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+
+public class QuizServlet extends HttpServlet {
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/quiz";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "root";
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        try {
+            // Load JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // DB Connection
+            Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            String query = "SELECT * FROM questions";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            out.println("<html><head><title>Quiz</title>");
+            out.println("<style>");
+            out.println("body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 40px; }");
+            out.println(".quiz-container { max-width: 700px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }");
+            out.println("h2 { text-align: center; color: #2c3e50; }");
+            out.println("p { font-weight: bold; color: #34495e; }");
+            out.println(".options { margin-bottom: 20px; }");
+            out.println("input[type='submit'] { padding: 10px 20px; font-size: 16px; border: none; background-color: #3498db; color: white; border-radius: 8px; cursor: pointer; }");
+            out.println("input[type='submit']:hover { background-color: #2980b9; }");
+            out.println("</style>");
+            out.println("</head><body>");
+            out.println("<div class='quiz-container'>");
+            out.println("<h2>Quiz</h2>");
+            out.println("<form method='POST' action='submit'>");
+
+            int questionCount = 1;
+            while (resultSet.next()) {
+                out.println("<div class='options'>");
+                out.println("<p>" + questionCount + ". " + resultSet.getString("question_text") + "</p>");
+                for (int i = 1; i <= 4; i++) {
+                    out.println("<label><input type='radio' name='question" + questionCount + "' value='" + i + "' required> " +
+                                resultSet.getString("option_" + i) + "</label><br>");
+                }
+                out.println("</div>");
+                questionCount++;
+            }
+
+            out.println("<br><input type='submit' value='Submit'>");
+            out.println("</form>");
+            out.println("</div>");
+            out.println("</body></html>");
+
+            // Clean up
+            resultSet.close();
+            statement.close();
+            connection.close();
+
+        } catch (ClassNotFoundException e) {
+            out.println("Error: MySQL JDBC Driver not found.<br>");
+            e.printStackTrace(out);
+        } catch (SQLException e) {
+            out.println("Database Error: " + e.getMessage());
+            e.printStackTrace(out);
+        }
+    }
+}

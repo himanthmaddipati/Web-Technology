@@ -1,0 +1,28 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+  <servlet>
+    <servlet-name>URLStep1Servlet</servlet-name>
+    <servlet-class>com.himanth.URLStep1Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>URLStep1Servlet</servlet-name>
+    <url-pattern>/urlstep1</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>URLStep2Servlet</servlet-name>
+    <servlet-class>com.himanth.URLStep2Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>URLStep2Servlet</servlet-name>
+    <url-pattern>/urlstep2</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>URLStep3Servlet</servlet-name>
+    <servlet-class>com.himanth.URLStep3Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>URLStep3Servlet</servlet-name>
+    <url-pattern>/urlstep3</url-pattern>
+  </servlet-mapping>
+</web-app>

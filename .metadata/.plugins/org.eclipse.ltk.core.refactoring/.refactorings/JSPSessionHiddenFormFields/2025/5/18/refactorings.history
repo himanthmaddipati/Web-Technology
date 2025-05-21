@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JSPSessionHiddenFormFields/src/main/webapp/process.jsp&apos; to &apos;input2.jsp&apos;" description="Rename resource &apos;process.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/process.jsp" name="input2.jsp" stamp="1746096123246" updateReferences="true"/>
+</session>

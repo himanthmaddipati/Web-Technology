@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;OSProjectNewJavaFX&apos;" deleteContents="false" description="Delete resource &apos;OSProjectNewJavaFX&apos;" element1="/OSProjectNewJavaFX" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1717303340137"/>&#x0A;<refactoring comment="Delete resource &apos;OSProjClone_3_NewFX&apos;" deleteContents="false" description="Delete resource &apos;OSProjClone_3_NewFX&apos;" element1="/OSProjClone_3_NewFX" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1717308834865"/>
+</session>

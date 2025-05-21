@@ -1,0 +1,30 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+
+  <servlet>
+    <servlet-name>SetSession</servlet-name>
+    <servlet-class>com.himanth.SetSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetSession</servlet-name>
+    <url-pattern>/setSession</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>GetSession</servlet-name>
+    <servlet-class>com.himanth.GetSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSession</servlet-name>
+    <url-pattern>/getSession</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>InvalidateSession</servlet-name>
+    <servlet-class>com.himanth.InvalidateSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InvalidateSession</servlet-name>
+    <url-pattern>/invalidateSession</url-pattern>
+  </servlet-mapping>
+
+</web-app>
